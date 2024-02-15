@@ -34,7 +34,7 @@ class StoreUpdateUser extends FormRequest
                 'required',
                 'email',
                 'max:100',
-                'min:20',
+                'min:10',
                 "unique:users,email,{$id},id",
             ],
             'password' => [

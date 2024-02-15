@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<h1 class="text-2xl font-semibold leading-tigh py-2">listagem do usuário {{ $user->name; }}</h1>
+<h1 class="text-2xl font-semibold leading-tigh py-2">Detalhes do usuário {{ $user->name; }}</h1>
 
 <ul>
     <li>{{ $user->name }}</li>
