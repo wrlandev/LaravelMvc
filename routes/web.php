@@ -14,6 +14,8 @@ use App\Http\Controllers\Admin\CommentController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::post('/users/{id}/comments', [CommentController::class, 'store'])->name('comment.store');
+Route::get('/users/{id}/comments/create', [CommentController::class, 'create'])->name('comments.create');
 Route::get('/users/{id}/comments', [CommentController::class, 'index'])->name('comments.index');
 
 Route::Delete('users/{id}', [UserController::class, 'destroy'])->name('user.destroy');
