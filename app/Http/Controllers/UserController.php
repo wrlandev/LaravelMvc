@@ -10,14 +10,14 @@ class UserController extends Controller
 {
     public function index(Request $request) {
         
-        $users = User::where('name', 'LIKE', "%{$request->search}%")->get();
+        $users = $this->model->where('name', 'LIKE', "%{$request->search}%")->get();
 
         return view('users/index', compact('users'));
     }
 
     public function show($id) {
         
-        if(!$user = User::find($id)) {
+        if(!$user = $this->model->find($id)) {
             return redirect()->route('users.index');
         }
         return view('users.show', compact('user'));
@@ -33,14 +33,14 @@ class UserController extends Controller
         $data = $request->all();
         $data['password'] = bcrypt($request->password);
 
-        User::create($data);
+        $this->model->create($data);
 
         return redirect()->route('users.index');
     }
 
     public function edit($id) {
 
-        if(!$user = User::find($id)) {
+        if(!$user = $this->model->find($id)) {
             return redirect()->route('users.index');
         }
 
@@ -49,7 +49,7 @@ class UserController extends Controller
 
     public function update(StoreUpdateUser $request, $id) {
 
-        if(!$user = User::find($id)) {
+        if(!$user = $this->model->find($id)) {
             return redirect()->route('users.index');
         }
 
@@ -66,7 +66,7 @@ class UserController extends Controller
 
     public function destroy($id) {
         
-        if(!$user = User::find($id)) {
+        if(!$user = $this->model->find($id)) {
             return redirect()->route('users.index');
         }
 
