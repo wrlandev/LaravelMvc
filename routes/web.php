@@ -13,6 +13,7 @@ use App\Http\Controllers\UserController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::Delete('users/{id}', [UserController::class, 'destroy'])->name('user.destroy');
 Route::put('/users/{id}', [UserController::class, 'update'])->name('user.update');
 Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
