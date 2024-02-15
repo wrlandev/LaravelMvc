@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreUpdateComment;
 Use App\Models\{
     Comment,
     User
@@ -44,7 +45,7 @@ class CommentController extends Controller
         return view('users.comments.create', compact('user'));
     }
 
-    public function store(Request $request, $userId) {
+    public function store(StoreUpdateComment $request, $userId) {
 
         if(!$user = $this->user->find($userId)) {
 
@@ -71,7 +72,7 @@ class CommentController extends Controller
         return view('users.comments.edit', compact('user', 'comment'));
     }
 
-    public function update(Request $request, $id) {
+    public function update(StoreUpdateComment $request, $id) {
 
         if(!$comment = $this->comment->find($id)) {
 
