@@ -5,6 +5,7 @@
         <li>
             {{ $user->name }}
             {{ $user->email }}
+            <a href="{{ route('user.show', $user->id) }}">Ver Detalhes</a>
         </li>
     @endforeach
 </ul>

@@ -14,7 +14,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/users', [UserController::class, 'index'])->name('user.index');
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::get('users/{id}', [UserController::class, 'show'])->name('user.show');
 
 Route::get('/', function () {
