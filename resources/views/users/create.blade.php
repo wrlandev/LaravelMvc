@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<h1>Novo Usuário</h1>
+<h1 class="text-2xl font-semibold leading-tigh py-2">Novo Usuário</h1>
 
 @include('includes.validations')
 
